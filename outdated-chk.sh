@@ -1,8 +1,9 @@
 #!/bin/bash
 
 echo "This script is for checking outdated files of Korean team."
-echo "This script must be run from the website folder."
+echo "This script must be run outside the website folder."
 
+cd website
 rm -rf ./outdated-ko.txt
 rm -rf ./outdated-en.txt
 rm -rf ./docs-ko.txt
@@ -25,11 +26,11 @@ sed -e 's/content\/ko/content\/en/g' docs-ko.txt > docs-en.txt.tmp
 
 mv docs-en.txt.tmp docs-en.txt
 
-comm -12 outdated-en.txt docs-en.txt >> outdated-ko.txt
+comm -12 outdated-en.txt docs-en.txt >> ../outdated-ko.txt
 
 rm -rf ./outdated-en.txt
 rm -rf ./docs-ko.txt
 
 echo "Check the contents of the outdated-ko.txt file."
 
-cat outdated-ko.txt
+cat ../outdated-ko.txt
