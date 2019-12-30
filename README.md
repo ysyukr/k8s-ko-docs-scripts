@@ -1,4 +1,4 @@
-# kubernetes-docs-ko-scripts
+# kubernetes-ko-docs-scripts
 쿠버네티스 문서의 유지 보수할 때 도움이 될 수 있는 스크립트입니다.
 
 스크립트에 문제가 있거나, 추가하고싶으신 스크립트가 있으시면 PR바로 주시면 됩니다.
