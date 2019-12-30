@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo "This script checks for reference links in newly added documents."
+echo "This script must be run outside the website folder."
 
 cd website
 rm -rf ./links-ko.txt
