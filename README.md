@@ -19,3 +19,7 @@
 
 * 이덕준 ([GitHub - @gochist](https://github.com/gochist))
 * [Slack channel](https://kubernetes.slack.com/messages/kubernetes-docs-ko)
+
+### 초간단 쿠버네티스 문서 한글화 시작 가이드
+- YouTube: https://www.youtube.com/watch?v=OTl8HBjxIhc
+- 가이드: https://github.com/jmyung/how2contribute-k8sdoc
