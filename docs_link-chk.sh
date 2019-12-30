@@ -9,7 +9,7 @@ RunScript(){
     read weeks
     echo "The week you enter is $weeks weeks. "
 
-    echo "Use the git log command to find new documents added in the last two weeks."
+    echo "Use the git log command to find new documents added in the last "$weeks" weeks."
 
     git log --name-only --pretty=oneline --diff-filter=A --since="$weeks".weeks -- content/ko/docs >> links-ko.txt
 
