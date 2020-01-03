@@ -3,7 +3,7 @@
 RunScript(){
     cd website
     rm -rf ./links-ko.txt
-    rm -rf ./links-ko-chk.txt
+    rm -rf ../links-ko-chk.txt
     
     echo -e "Check branch name: "
     read chkbranch
