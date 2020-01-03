@@ -4,6 +4,13 @@ RunScript(){
     cd website
     rm -rf ./links-ko.txt
     rm -rf ./links-ko-chk.txt
+    
+    echo -e "Check branch name: "
+    read chkbranch
+    echo "Entered branch name: $chkbranch"
+    
+    echo "Checkout "$chkbranch" branch."
+    git checkout "$chkbranch"
 
     echo -e "How many weeks ago would you like to see data?: "
     read weeks
