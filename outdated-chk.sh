@@ -10,6 +10,7 @@ RunScript(){
 
     rm -rf ./outdated-en.txt
     rm -rf ./docs-ko.txt
+    rm -rf ./docs-en.txt
 
     echo -e "Previous branch name: "
     read prebranch
@@ -33,6 +34,7 @@ RunScript(){
 
     rm -rf ./outdated-en.txt
     rm -rf ./docs-ko.txt
+    rm -rf ./docs-en.txt
 
     echo "Check the contents of the outdated-ko.txt file."
 
