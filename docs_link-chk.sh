@@ -1,10 +1,12 @@
 #!/bin/bash
 
 RunScript(){
+    SCIRPT_PWD=$(dirname $(realpath $0))
+    rm -rf ./links-ko-chk.txt
+    cd ..
     cd website
     rm -rf ./links-ko.txt
-    rm -rf ../links-ko-chk.txt
-    
+        
     echo -e "Check branch name: "
     read chkbranch
     echo "Entered branch name: $chkbranch"
@@ -27,20 +29,20 @@ RunScript(){
     while read path
     do
         grep -n -r "$path" content/ko/docs
-    done < links-ko.txt >> ../links-ko-chk.txt
+    done < links-ko.txt >> "$SCIRPT_PWD"/links-ko-chk.txt
 
     rm -rf ./links-ko.txt
 
     echo "Please check the links-ko-chk.txt file and correct the link."
 
-    cat ../links-ko-chk.txt
+    cat "$SCIRPT_PWD"/links-ko-chk.txt
 }
 
 echo "This script checks for reference links in newly added documents."
 
-if [ -d "website" ]; then
+if [ -d "../website" ]; then
     echo "Checked the website folder. Run the script."
     RunScript
 else
-    echo "This script must be run outside the website folder."
+    echo "Please run the script from the original folder."
 fi

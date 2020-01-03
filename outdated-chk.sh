@@ -1,8 +1,13 @@
 #!/bin/bash
 
 RunScript(){
-    cd website
+    SCIRPT_PWD=$(dirname $(realpath $0))
+
     rm -rf ./outdated-ko.txt
+
+    cd ..
+    cd website
+
     rm -rf ./outdated-en.txt
     rm -rf ./docs-ko.txt
 
@@ -20,25 +25,25 @@ RunScript(){
 
     find content/ko/docs >> docs-ko.txt
 
-    sed -e 's/content\/ko/content\/en/g' docs-ko.txt > docs-en.txt.tmp
+    sed -e 's/content\/ko/content\/en/g' docs-ko.txt >> docs-en.txt.tmp
 
     mv docs-en.txt.tmp docs-en.txt
 
-    comm -12 outdated-en.txt docs-en.txt >> ../outdated-ko.txt
+    comm -12 outdated-en.txt docs-en.txt >> "$SCIRPT_PWD"/outdated-ko.txt
 
     rm -rf ./outdated-en.txt
     rm -rf ./docs-ko.txt
 
     echo "Check the contents of the outdated-ko.txt file."
 
-    cat ../outdated-ko.txt
+    cat "$SCIRPT_PWD"/outdated-ko.txt
 }
 
 echo "This script is for checking outdated files of Korean team."
 
-if [ -d "website" ]; then
+if [ -d "../website" ]; then
     echo "Checked the website folder. Run the script."
     RunScript
 else
-    echo "This script must be run outside the website folder."
+    echo "Please run the script from the original folder."
 fi
